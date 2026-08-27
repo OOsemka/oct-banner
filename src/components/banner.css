@@ -1,0 +1,71 @@
+/* Banner tool. Prefix: bn- */
+
+.bn-lead {
+  max-width: 48rem;
+  color: var(--pf-t--global--text--color--subtle, #6a6e73);
+}
+
+.bn-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+  text-align: center;
+  word-break: break-word;
+}
+
+.bn-preview--empty {
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.bn-color-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pf-t--global--spacer--sm, 8px);
+}
+
+.bn-color-input {
+  width: 2.5rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--pf-t--global--border--color--default, #d2d2d2);
+  background: transparent;
+  cursor: pointer;
+}
+
+.bn-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pf-t--global--spacer--sm, 8px);
+}
+
+.bn-preset {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.bn-preset:focus {
+  outline: 2px solid var(--pf-t--global--border--color--brand--default, #0066cc);
+  outline-offset: 2px;
+}
+
+.bn-preset.is-selected {
+  border-color: var(--pf-t--global--icon--color--regular, #151515);
+}
+
+.bn-hex {
+  font-family: var(--pf-t--global--font--family--mono, monospace);
+  font-size: var(--pf-t--global--font--size--sm, 0.875rem);
+}
+
+.bn-actions {
+  padding-top: var(--pf-t--global--spacer--md, 16px);
+}

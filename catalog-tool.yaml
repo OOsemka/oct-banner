@@ -1,0 +1,36 @@
+# Copy this document into oct-storefront catalog/community.yaml
+# ONLY after quay.io/<org>/oct-banner:<semver>-ocp<major.minor> exists and is public.
+# Never list a (version, OpenShift minor) row unless that exact tag is public.
+apiVersion: communitytools.io/v1alpha1
+kind: CommunityTool
+metadata:
+  name: oct-banner
+spec:
+  displayName: Banner
+  description: >-
+    Show the current OpenShift Console banner and change its text and colors.
+    Uses ConsoleNotification. Changes apply cluster-wide.
+  category: management
+  source: community
+  git: https://github.com/OOsemka/oct-banner
+  consolePlugin: oct-banner
+  href: /community-tools/management/banner
+  defaultChannel: stable
+  channels:
+    stable: {}
+    candidate: {}
+  validatedOn:
+    - "4.21"
+    - "4.22"
+  minOpenShift: "4.21"
+  versions:
+    - version: "1.0.0"
+      channel: stable
+      openshift: ["4.21"]
+      image: quay.io/cjanisze/oct-banner:1.0.0-ocp4.21
+      gitRef: v1.0.0
+    - version: "1.0.0"
+      channel: stable
+      openshift: ["4.22"]
+      image: quay.io/cjanisze/oct-banner:1.0.0-ocp4.22
+      gitRef: v1.0.0
