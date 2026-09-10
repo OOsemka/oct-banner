@@ -32,6 +32,9 @@ import {
   Spinner,
   Stack,
   StackItem,
+  Tab,
+  TabTitleText,
+  Tabs,
   TextInput,
 } from '@patternfly/react-core';
 import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
@@ -48,6 +51,7 @@ import {
 } from '../utils/k8s-resources';
 import dashboardLogger from '../utils/logger';
 import CommunityDisclaimer from './CommunityDisclaimer';
+import ConsoleBranding from './ConsoleBranding';
 import './banner.css';
 
 const I18N = 'plugin__oct-banner';
@@ -105,6 +109,7 @@ const BannerPage: FC = () => {
   const topBanners = useMemo(() => banners.filter(isTopBanner), [banners]);
 
   const [selectedName, setSelectedName] = useState('');
+  const [activeTab, setActiveTab] = useState(0);
   const [text, setText] = useState('');
   const [bg, setBg] = useState(DEFAULT_BANNER_BG);
   const [fg, setFg] = useState(DEFAULT_BANNER_FG);
@@ -265,8 +270,11 @@ const BannerPage: FC = () => {
             </StackItem>
           ) : null}
           {loaded && !loadFailed ? (
-            <>
-              <StackItem>
+            <StackItem>
+              <Tabs activeKey={activeTab} onSelect={(_, key) => setActiveTab(key as number)}>
+                <Tab eventKey={0} title={<TabTitleText>{t('Banner')}</TabTitleText>}>
+                  <Stack hasGutter className="bn-tab-content">
+                    <StackItem>
                 <Card>
                   <CardTitle>{t('Current banner')}</CardTitle>
                   <CardBody>
@@ -435,7 +443,15 @@ const BannerPage: FC = () => {
                   </CardBody>
                 </Card>
               </StackItem>
-            </>
+                  </Stack>
+                </Tab>
+                <Tab eventKey={1} title={<TabTitleText>{t('Console Branding')}</TabTitleText>}>
+                  <div className="bn-tab-content">
+                    <ConsoleBranding />
+                  </div>
+                </Tab>
+              </Tabs>
+            </StackItem>
           ) : null}
         </Stack>
       </PageSection>

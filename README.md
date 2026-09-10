@@ -5,7 +5,7 @@
 Standalone OpenShift Console plugin that shows the current cluster banner and lets you change its text and colors. It reads and writes `ConsoleNotification` (`console.openshift.io/v1`).
 
 - **Plugin ID:** `oct-banner`
-- **Image:** `quay.io/<org>/oct-banner:1.0.0-ocp4.22` (`<semver>-ocp<major.minor>`)
+- **Image:** `quay.io/<org>/oct-banner:1.1.0-ocp4.22` and `:1.1.0-ocp4.21` (`<semver>-ocp<major.minor>`; always publish both minors)
 - **Route:** `/community-tools/management/banner`
 - **Git branch:** `main` / optional `ocp-4.22` when PF/API differ
 
@@ -21,6 +21,15 @@ The OpenShift Console top bar comes from cluster-scoped `ConsoleNotification` ob
 2. Lets you edit text, background color, and text color, with a live preview.
 3. Applies the change with your console user (cluster-admin typically).
 4. Creates a notification named `oct-banner` only if none exists. It does **not** hardcode cluster names or lab text.
+
+### Console Branding (v1.1.0)
+
+A new **Console Branding** card lets you:
+
+- Upload a custom logo image (PNG, SVG, or JPEG) that replaces the default OpenShift logo in the Console masthead.
+- Set a custom product name displayed alongside the logo.
+- The logo is stored as a base64 data-URI in an `oct-banner-branding` ConfigMap.
+- Changes are applied cluster-wide.
 
 ## Contributing — cluster-portable code
 

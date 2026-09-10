@@ -9,11 +9,13 @@ This repository is the **Banner** ConsolePlugin. It is **not** the OCT storefron
 | | Value |
 | --- | --- |
 | Plugin ID / ConsolePlugin / `package.json` `consolePlugin.name` | **`oct-banner`** |
-| Image | `quay.io/<org>/oct-banner:1.0.0-ocp4.22` (`<semver>-ocp<major.minor>`) |
+| Image | `quay.io/<org>/oct-banner:1.1.0-ocp4.22` (`<semver>-ocp<major.minor>`) |
 | i18n | `plugin__oct-banner` |
 | Route | `/community-tools/management/banner` |
 
 Display name is **Banner**. No PVC or discovery sidecar.
+
+**Current version:** `1.1.0` (package.json / consolePlugin.version).
 
 ## What this plugin owns
 
@@ -21,12 +23,13 @@ Display name is **Banner**. No PVC or discovery sidecar.
 - Show the current top banner (text and colors) from the live cluster
 - Apply new text / background / text color; create `oct-banner` only when none exists
 - Remove the selected notification
+- **Console Branding** (v1.1.0) — upload a custom logo (base64 data-URI stored in an `oct-banner-branding` ConfigMap) and set the product name displayed in the Console masthead
 
-Uses the signed-in user’s console credentials (Console SDK). No extra ServiceAccount.
+Uses the signed-in user's console credentials (Console SDK). No extra ServiceAccount.
 
 ## OpenShift and extension versions
 
-Two axes in the catalog: git tag **`v1.x.x`** (semver) and optional branch **`ocp-X.Y`** when PatternFly or APIs diverge. Image tags **always** `<semver>-ocp<major.minor>` (e.g. `1.0.0-ocp4.22`).
+Two axes in the catalog: git tag **`v1.x.x`** (semver) and optional branch **`ocp-X.Y`** when PatternFly or APIs diverge. Image tags **always** `<semver>-ocp<major.minor>` (e.g. `1.1.0-ocp4.22`). **Always publish both** `<semver>-ocp4.21` and `<semver>-ocp4.22` (same digest if bits match). Catalog `versions[]` lists both minors when those tags exist.
 
 - Git: `main` tracks the newest supported minor (currently **4.22**).
 - PatternFly 6 on 4.22; do not mix PF majors on one branch.

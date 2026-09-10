@@ -69,3 +69,55 @@
 .bn-actions {
   padding-top: var(--pf-t--global--spacer--md, 16px);
 }
+
+/* ── Console branding ── */
+
+.bn-logo-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-t--global--spacer--sm, 8px);
+  max-width: 300px;
+}
+
+.bn-logo-img {
+  max-width: 200px;
+  max-height: 80px;
+  object-fit: contain;
+  border: 1px solid var(--pf-t--global--border--color--default, #d2d2d2);
+  border-radius: 4px;
+  padding: var(--pf-t--global--spacer--sm, 8px);
+  background: var(--pf-t--global--background--color--primary--default, #fff);
+}
+
+.bn-logo-file-info {
+  display: flex;
+  align-items: center;
+  gap: var(--pf-t--global--spacer--sm, 8px);
+  font-size: var(--pf-t--global--font--size--sm, 0.875rem);
+  color: var(--pf-t--global--text--color--subtle, #6a6e73);
+}
+
+.bn-logo-dimensions {
+  font-style: italic;
+  font-size: var(--pf-t--global--font--size--xs, 0.75rem);
+  color: var(--pf-t--global--text--color--subtle, #6a6e73);
+}
+
+.bn-upload-row {
+  display: flex;
+  align-items: center;
+  gap: var(--pf-t--global--spacer--sm, 8px);
+}
+
+.bn-upload-filename {
+  font-size: var(--pf-t--global--font--size--sm, 0.875rem);
+  color: var(--pf-t--global--text--color--subtle, #6a6e73);
+}
+
+.bn-file-hidden {
+  display: none;
+}
+
+.bn-tab-content {
+  padding-top: var(--pf-t--global--spacer--lg, 24px);
+}
