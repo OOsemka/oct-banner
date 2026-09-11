@@ -2,7 +2,7 @@
 
 This is **OpenShift Community Tools (OCT)**, a **community project**, not an official Red Hat supported product. Do not describe it as official Red Hat software.
 
-This repository is the **Banner** ConsolePlugin. It is **not** the OCT storefront. Catalog hubs live in `oct-storefront`.
+This repository is the **Banner** ConsolePlugin: show and customize the OpenShift Console banner, logo, and branding. Change text, colors, and console appearance. It is **not** the OCT storefront. Catalog hubs live in `oct-storefront`.
 
 ## Identifiers
 

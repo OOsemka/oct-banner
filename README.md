@@ -2,7 +2,7 @@
 
 **Community project. Not officially supported by Red Hat.**
 
-Standalone OpenShift Console plugin that shows the current cluster banner and lets you change its text and colors. It reads and writes `ConsoleNotification` (`console.openshift.io/v1`).
+Standalone OpenShift Console plugin that shows and customizes the OpenShift Console banner, logo, and branding. Change text, colors, and console appearance. It reads and writes `ConsoleNotification` (`console.openshift.io/v1`).
 
 - **Plugin ID:** `oct-banner`
 - **Image:** `quay.io/<org>/oct-banner:1.1.0-ocp4.22` and `:1.1.0-ocp4.21` (`<semver>-ocp<major.minor>`; always publish both minors)
