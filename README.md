@@ -31,7 +31,9 @@ A new **Console Branding** card lets you:
 - The logo is stored as a base64 data-URI in an `oct-banner-branding` ConfigMap.
 - Changes are applied cluster-wide.
 
-## Contributing — cluster-portable code
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md): setup, `yarn verify`, testing on your own cluster, the project rules and what maintainers do at release.
 
 Do **not** hardcode environment-specific values (banner copy, lab hostnames, StorageClasses, networks). Read the live `ConsoleNotification`. Agents: `.cursor/rules/oct-no-env-hardcoding.mdc`.
 
